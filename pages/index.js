@@ -3,7 +3,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import VideoCardDisplay from "../components/VideoCardDisplay";
-import { Container } from "react-bootstrap"; // Import Container from react-bootstrap
+import { Container, Row, Col } from "react-bootstrap"; // Import Container from react-bootstrap
 
 export default function Home() {
   return (
@@ -15,9 +15,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Container> {/* Wrapping all content in a Container for consistent layout */}
+      <Container>
+        {/* Header Section */}
         <Header />
+
+        {/* Hero Section */}
         <HeroSection />
+
+        {/* Profile Info Section (Optional - If you want to display channel details like description) */}
+        <section className="my-5">
+          <Row className="justify-content-center">
+            <Col xs={12} sm={10} md={8}>
+              <h3>Welcome to Our Channel</h3>
+              <p>
+                Explore exciting content and videos here. Stay tuned for the latest updates and
+                more exciting videos coming your way!
+              </p>
+            </Col>
+          </Row>
+        </section>
+
+        {/* Featured Videos Section */}
         <VideoCardDisplay />
       </Container>
     </>

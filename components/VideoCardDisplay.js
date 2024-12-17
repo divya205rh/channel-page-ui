@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Card, Spinner, Alert } from "react-bootstrap"; // Import react-bootstrap components
+import { Container, Row, Col, Card, Spinner, Alert, Button } from "react-bootstrap"; // Import react-bootstrap components
+import { PlayCircleFilled } from "@mui/icons-material"; // MUI play button icon
 
 export default function VideoCardDisplay() {
   const [videoData, setVideoData] = useState([]);
@@ -62,20 +63,66 @@ export default function VideoCardDisplay() {
                     width: "100%",
                     borderRadius: "8px",
                     overflow: "hidden",
+                    position: "relative",
                   }}
                 >
-                  <Card.Img
-                    variant="top"
-                    src={video.image}
-                    alt={video.title}
-                    style={{
-                      height: "200px",
-                      objectFit: "cover",
-                    }}
-                  />
+                  <div style={{ position: "relative" }}>
+                    {/* Video Thumbnail */}
+                    <Card.Img
+                      variant="top"
+                      src={video.image}
+                      alt={video.title}
+                      style={{
+                        height: "200px",
+                        objectFit: "cover",
+                        position: "relative",
+                      }}
+                    />
+
+                    {/* Play Duration Overlay */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        bottom: "10px",
+                        right: "10px",
+                        background: "rgba(0, 0, 0, 0.5)",
+                        color: "white",
+                        padding: "5px 10px",
+                        borderRadius: "20px",
+                      }}
+                    >
+                      {video.duration} min
+                    </div>
+
+                    {/* Play Button Overlay */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        color: "white",
+                        fontSize: "40px",
+                        cursor: "pointer",
+                      }}
+                    >
+                      <PlayCircleFilled style={{ fontSize: "50px" }} />
+                    </div>
+                  </div>
+
                   <Card.Body>
                     <Card.Title>{video.title}</Card.Title>
                     <Card.Text>{video.description}</Card.Text>
+
+                    {/* Video Metadata */}
+                    <div style={{ fontSize: "14px", color: "#888" }}>
+                      <p>{video.views} views | {video.date}</p>
+                    </div>
+
+                    {/* Subscribe Button */}
+                    <Button variant="danger" className="w-100">
+                      Subscribe
+                    </Button>
                   </Card.Body>
                 </Card>
               </Col>
