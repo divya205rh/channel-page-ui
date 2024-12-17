@@ -3,7 +3,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import VideoCardDisplay from "../components/VideoCardDisplay";
-import { Container, Row, Col } from "react-bootstrap"; // Import Container from react-bootstrap
+import { Container, Row, Col } from "react-bootstrap"; // Import Container, Row, Col from react-bootstrap
 
 export default function Home() {
   return (
@@ -15,19 +15,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Container>
+      <Container fluid>
         {/* Header Section */}
         <Header />
 
         {/* Hero Section */}
         <HeroSection />
 
-        {/* Profile Info Section (Optional - If you want to display channel details like description) */}
+        {/* Profile Info Section */}
         <section className="my-5">
           <Row className="justify-content-center">
             <Col xs={12} sm={10} md={8}>
-              <h3>Welcome to Our Channel</h3>
-              <p>
+              <h3 className="text-center">Welcome to Our Channel</h3>
+              <p className="text-center">
                 Explore exciting content and videos here. Stay tuned for the latest updates and
                 more exciting videos coming your way!
               </p>
@@ -36,7 +36,18 @@ export default function Home() {
         </section>
 
         {/* Featured Videos Section */}
-        <VideoCardDisplay />
+        <section className="my-5">
+          <VideoCardDisplay />
+        </section>
+
+        {/* Footer Section (Optional) */}
+        <footer className="my-5">
+          <Row className="justify-content-center">
+            <Col xs={12} sm={10} md={8} className="text-center">
+              <p>© 2024 Our Channel. All rights reserved.</p>
+            </Col>
+          </Row>
+        </footer>
       </Container>
     </>
   );

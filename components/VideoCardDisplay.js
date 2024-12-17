@@ -27,13 +27,17 @@ export default function VideoCardDisplay() {
       });
   }, []);
 
+  const handlePlayClick = (videoUrl) => {
+    // You can handle opening a modal or redirecting to the full video page here.
+    console.log("Playing video:", videoUrl);
+    // Example: Redirect to video page
+    window.location.href = videoUrl;
+  };
+
   return (
     <section style={{ padding: "40px 0", backgroundColor: "#f9f9f9" }}>
       <Container>
-        <h3
-          className="text-center"
-          style={{ marginBottom: "40px", color: "black" }}
-        >
+        <h3 className="text-center" style={{ marginBottom: "40px", color: "black" }}>
           Featured Videos
         </h3>
 
@@ -96,6 +100,7 @@ export default function VideoCardDisplay() {
 
                     {/* Play Button Overlay */}
                     <div
+                      onClick={() => handlePlayClick(video.videoUrl)} // Handling play button click
                       style={{
                         position: "absolute",
                         top: "50%",

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Container, NavDropdown, Row, Col, Button } from "react-bootstrap"; // React Bootstrap components
+import { Navbar, Nav, Container, Button } from "react-bootstrap"; // React Bootstrap components
 import { Facebook, Twitter, Instagram } from "@mui/icons-material"; // MUI Social Icons
 import { Avatar } from "@mui/material"; // MUI Avatar for profile image
 
@@ -32,13 +32,13 @@ export default function Header() {
             <p>Your channel tagline</p>
             <div>
               {/* Social Media Links */}
-              <Button variant="link" style={{ color: "white" }}>
+              <Button variant="link" style={{ color: "white" }} href="https://facebook.com" target="_blank">
                 <Facebook />
               </Button>
-              <Button variant="link" style={{ color: "white" }}>
+              <Button variant="link" style={{ color: "white" }} href="https://twitter.com" target="_blank">
                 <Twitter />
               </Button>
-              <Button variant="link" style={{ color: "white" }}>
+              <Button variant="link" style={{ color: "white" }} href="https://instagram.com" target="_blank">
                 <Instagram />
               </Button>
             </div>
@@ -55,6 +55,7 @@ export default function Header() {
             <Nav className="ms-auto">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#about">About</Nav.Link>
+              <Nav.Link href="#contact">Contact</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
