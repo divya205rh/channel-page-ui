@@ -4,23 +4,31 @@
     "title": "Video 1",
     "description": "This is the first video.",
     "image": "/images/video1.jpg",
-    "views": "1.2M",
-    "duration": "5"
+    "duration": 3, 
+    "views": 1200, 
+    "date": "2024-01-01"
   },
   {
     "id": 2,
     "title": "Video 2",
     "description": "This is the second video.",
-    "image": "/images/video2.jpg",
-    "views": "900K",
-    "duration": "6"
+    "image": "/images/video2.jpg", 
+    "duration": 5, 
+    "views": 800, 
+    "date": "2024-02-01"
   },
   {
     "id": 3,
     "title": "Video 3",
     "description": "This is the third video.",
-    "image": "/images/video3.jpg",
-    "views": "1.5M",
-    "duration": "4"
+    "image": "/images/video3.jpg", 
+    "duration": 4, 
+    "views": 1500, 
+    "date": "2024-03-01"
   }
 ]
+
+
+
+
+
